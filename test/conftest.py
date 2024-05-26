@@ -1,5 +1,5 @@
 from selenium import webdriver
-from config import Url
+from constants import Url
 import pytest
 
 @pytest.fixture

@@ -42,45 +42,45 @@ class OrderPage(BasePage):
     def __init__(self,driver):
         #super.__init__(driver)
         self.driver=driver
-    def InputName(self,name):
+    def input_name(self,name):
         self.enter_text(self._INPUTNAME,name)
-    def InputSurname(self,surname):
+    def input_surname(self,surname):
         self.enter_text(self._INPUTSURNAME,surname)
-    def InputAdress(self,adress):
+    def input_adress(self,adress):
         self.enter_text(self._INPUTADRESS,adress)
-    def InputMetro(self):
+    def input_metro(self):
         self.click_element(self._INPUTMETRO)
 
-    def ChoiseStationMetro(self):
+    def choise_station_metro(self):
         self.click_element(self._LIST_SUBWAY_STATIONS)
-    def InputTelephone(self,phone):
+    def input_telephone(self,phone):
         self.enter_text(self._INPUTPHONE,phone)
-    def ClickFollowButton(self):
+    def click_follow_button(self):
         self.click_element(self._FOLLOWBUTTON)
-    def ClickDateOrder(self):
+    def click_date_order(self):
         self.click_element(self._WHENBRINGSCOOTER)
-    def ChooseOrderDate(self):
+    def choose_order_date(self):
         self.click_element(self._DATEPICKERDAY)
-    def ClickRentalPeriod(self):
+    def click_rental_period(self):
         self.click_element(self._RENTALPERIOD)
-    def ChooseRentalPeriodOneDay(self):
+    def choose_rental_period_one_day(self):
         self.click_element(self._RENTALPERIODONEDAY)
-    def ChooseRentalPeriodTwoDay(self):
+    def choose_rental_period_two_day(self):
         self.click_element(self._RENTALPERIODTWODAY)
 
-    def ChooseColorBlack(self):
+    def choose_color_black(self):
         self.click_element(self._SCOOTERCOLOURBLACK)
-    def ChooseColorGrey(self):
+    def choose_color_grey(self):
         self.click_element(self._SCOOTERCOLOURGREY)
-    def FillCommentForCurier(self,comment):
+    def fill_comment_for_curier(self,comment):
         self.enter_text(self._COMMENTFORCOURIER,comment)
-    def ClickOrderButton(self):
+    def click_order_button(self):
         self.click_element(self._ORDERMIDDLEBUTTON)
-    def GoNextStep(self):
-        self.element_is_present(self._ORDERMODALHEADER)
-    def ClickOrderYesButton(self):
+    def go_next_step(self):
+        self.find_element(self._ORDERMODALHEADER)
+    def click_order_yes_button(self):
         self.click_element(self._YESBUTTON)
-    def OrderPlacedText(self):
-        self.element_is_present(self._ORDERHASBEENPLACED)
+    def order_placed_text(self):
+        self.find_element(self._ORDERHASBEENPLACED)
 
 
