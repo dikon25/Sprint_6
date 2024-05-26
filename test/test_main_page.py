@@ -1,6 +1,5 @@
 import allure
 from constants import Url
-from helpers import QuestionsAnswers
 from pages.main_page import MainPage
 import pytest
 

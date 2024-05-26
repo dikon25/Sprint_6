@@ -2,6 +2,7 @@ import allure
 from constants import Url
 from pages.main_page import MainPage
 
+
 class TestLogoYandex:
     @allure.title(' Проверка если нажать на логотип Яндекса, в новом окне через редирект откроется главная страница Дзена.')  # декораторы
     @allure.description('В хедере нажимаем на логотип Яндекса и проверяем что открывается страница ДЗЕН')

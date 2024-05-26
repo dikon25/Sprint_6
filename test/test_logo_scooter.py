@@ -2,6 +2,7 @@ import allure
 from constants import Url
 from pages.main_page import MainPage
 
+
 class TestLogoScooter:
     @allure.title('Проверить: если нажать на логотип «Самоката», попадёшь на главную страницу «Самоката».')  # декораторы
     @allure.description('на странице "https://qa-scooter.praktikum-services.ru/order" кликаем на логотип Самокат и проверяем что открывается страница https://qa-scooter.praktikum-services.ru/')

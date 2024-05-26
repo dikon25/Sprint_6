@@ -1,6 +1,7 @@
 from faker import Faker
 import random
 
+
 class RegData:
     def Reg_up_data_name():
         fake=Faker('RU')

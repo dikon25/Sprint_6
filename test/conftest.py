@@ -2,6 +2,7 @@ from selenium import webdriver
 from constants import Url
 import pytest
 
+
 @pytest.fixture
 def driver():
     driver = webdriver.Chrome()

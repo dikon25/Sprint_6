@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
-
 class OrderPage(BasePage):
     _ORDERHEADERTEXT=(By.XPATH,'//div[contains(@class, "Order_Header")]')
     _INPUTNAME=(By.XPATH,'//input[contains(@placeholder,"* Имя")]')
