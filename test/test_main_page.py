@@ -2,6 +2,7 @@ import allure
 from constants import Url
 from pages.main_page import MainPage
 import pytest
+from helpers import QuestionsAnswers
 
 
 class TestMainPage:
@@ -10,7 +11,7 @@ class TestMainPage:
     def test_enter_from_header_button(self,driver):
         main_page=MainPage(driver)
         main_page.сlick_header_order_button()
-        assert driver.current_url == Url.url_order
+        assert main_page.get_current_url() == Url.url_order
 
     @allure.title('Проверка точки входа в сценарий, кнопка «Заказать» в середине страницы.')  # декораторы
     @allure.description('В середине страницы кликаем кнопку "Заказать" и проверяем что открывается страница "https://qa-scooter.praktikum-services.ru/order"')
@@ -29,6 +30,5 @@ class TestMainPage:
         main_page.go_to_main_page()
         main_page.сlick_coockie_confirm_button()
         main_page.click_question_main_page(question)
-        text=main_page.answer_fact_result(answer)
-        return text
-        assert text == assert_answer
+        with allure.step("Проверка фактического ответа с ожидаемым"):
+            assert main_page.answer_fact_result(answer) == assert_answer

@@ -12,16 +12,16 @@ class TestOrderPage:
         'Заполняем регистрационные формы разными наборами данных два раза.Проверить, что появилось всплывающее окно с сообщением об успешном создании заказа. "')
 
 
-    @pytest.mark.parametrize('name,surname,address,phone,comment',[[RegData.Reg_up_data_name(),
-                                                                    RegData.Reg_up_data_surname(),
-                                                                    RegData.Reg_up_data_address(),
-                                                                    RegData.Reg_up_data_phone(),
-                                                                    RegData.Reg_up_data_comment()],
-                                                                   [RegData.Reg_up_data_name(),
-                                                                    RegData.Reg_up_data_surname(),
-                                                                    RegData.Reg_up_data_address(),
-                                                                    RegData.Reg_up_data_phone(),
-                                                                     RegData.Reg_up_data_comment()]])
+    @pytest.mark.parametrize('name,surname,address,phone,comment',[[RegData.reg_up_data_name(),
+                                                                    RegData.reg_up_data_surname(),
+                                                                    RegData.reg_up_data_address(),
+                                                                    RegData.reg_up_data_phone(),
+                                                                    RegData.reg_up_data_comment()],
+                                                                   [RegData.reg_up_data_name(),
+                                                                    RegData.reg_up_data_surname(),
+                                                                    RegData.reg_up_data_address(),
+                                                                    RegData.reg_up_data_phone(),
+                                                                    RegData.reg_up_data_comment()]])
 
     def test_input_form_1(self,driver,name,surname,address,phone,comment):
         order_page = OrderPage(driver)
@@ -44,9 +44,8 @@ class TestOrderPage:
         order_page.click_order_button()
         order_page.go_next_step()
         order_page.click_order_yes_button()
-        OrderPlaced=order_page.order_placed_text()
-        return OrderPlaced
-        assert OrderPlaced
+        with allure.step("Проверка появления модального сообщения 'Заказ оформлен'"):
+            assert order_page.order_placed_text()
 
 
 
